@@ -6,7 +6,7 @@ require('dotenv').config();
 var app = express();
 
 // Set up multer for file upload handling
-const upload = multer({ dest: 'uploads/' });
+const upload = multer({ storage: multer.memoryStorage() });
 
 app.use(cors());
 app.use('/public', express.static(process.cwd() + '/public'));
